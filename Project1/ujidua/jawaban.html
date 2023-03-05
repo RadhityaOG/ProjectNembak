@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jawaban</title>
+    <link rel="stylesheet" href="style2.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>jadi Ini Jawaban Kamu</h1>
+        <p>Kamu menjawab: <strong id="jawaban"></strong></p>
+        <p id="pesan"></p>
+        <a href="index.html" class="btn">kembali</a>
+      </div>      
+    <script src="script.js"></script>
+    <script>
+      // JavaScript untuk menampilkan pesan berbeda
+      let urlParams = new URLSearchParams(window.location.search);
+      let jawaban = urlParams.get('jawaban');
+      let pesan = document.getElementById('pesan');
+      if (jawaban === 'iya') {
+        pesan.innerHTML = 'Silahkan kirim pesan ke nomor WA: <a href="https://wa.me/6287877082802?text=iya,suka">radhit</a>';
+      } else if (jawaban === 'tidak') {
+        pesan.innerHTML = 'Hahaha oke :)';
+      } else {
+        pesan.innerHTML = 'Jawaban belum terjawab';
+      }
+      document.getElementById('jawaban').textContent = jawaban;
+    </script>
+  </body>
+</html>
