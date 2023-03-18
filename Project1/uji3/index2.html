@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mau Jadi Pacar Ku?</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 97vh;
+      background-color: #F9E4B7;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      margin-right: 50px;
+      background-color: #FFF;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .photo img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFF;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      color: #1f9e5f;
+      ;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #1bbd6c;
+    }
+
+    .form-group input[type="text"] {
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+      border: 2px solid #F9E4B7;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #1bbd6c;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .submit-btn {
+      background-color: #F9E4B7;
+      color: #1bbd6c;
+      border: 2px solid #F9E4B7;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .submit-btn:hover {
+      background-color: #FFF;
+      color: #F9E4B7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="photo">
+      <img src="https://github.com/RadhityaOG/ProjectGbt/blob/main/unnamed.jpg?raw=true" alt="Foto">
+    </div>
+    <div class="form-container">
+      <div class="header">
+        <h1>Mau Jadi Pacar Ku?</h1>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="jawaban">Jawaban:</label>
+          <input type="text" id="jawaban" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="submit-btn">Kirim</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const jawaban = document.querySelector('#jawaban').value;
+      const message = encodeURIComponent(jawaban);
+      const url = `https://wa.me/6287877082802?text=Halo%20radhit,%20Jawaban%20aku%20Adalah%20:%20${message}`;
+      window.location.href = url;
+    });
+  </script>
+
+</body>
+</html>
